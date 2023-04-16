@@ -61,7 +61,6 @@ namespace ServerLicenseStorage
                 {
                     TcpClient client = listener.AcceptTcpClient();
 
-                    // создаем новый поток для обслуживания нового клиента
                     Task clientThread = new Task(() => Service(client));
                     clientThread.Start();
                 }
